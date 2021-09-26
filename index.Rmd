@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Compilación de productos de datos"
+author: "Calderon, S., Zuñiga, L."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book

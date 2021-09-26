@@ -1,5 +1,5 @@
 
-# Género, discriminación y participación ¿ciudadana?
+# Género, discriminación y participación ¿ciudadana? {#genero-y-discriminacion}
   Un acercamiento a la data existente. 
 
 *Leanna Sofía de los Ángeles Zúñiga Montaño*
@@ -318,7 +318,7 @@ sociedad_respeta %>%
        y = "Percepción de personas LGBTI")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-17-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 
 De acuerdo al gráfico podemos identificar que del total de personas LGBTI encuestadas el **55.5%** manifestó que la población peruana **no respeta su orientación sexual e identidad de género**; mientras que un 22% indicó que sí siente ser respetada.
 
@@ -335,7 +335,7 @@ sociedad_reconoce %>%
        y = "Percepción de personas LGBTI")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-18-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
 Asimismo, de acuerdo a la información brindada por la población encuestada, la principal percepción en torno al avance del reconocimiento de los derechos humanos es negativa. Un 54.8% considera que en Perú existe un mal avance, un 25.7% que es regular y solo el 3.2% considera que hay un buen avance.
 
@@ -353,7 +353,7 @@ respeta_reconoce %>%
        y = "Recocimiento de derechos humanos en personas LGBTI")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-19-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
 En función al gráfico, podemos observar que del total de personas encuestadas, el mayor porcentaje se ubica en el bloque "No" con un 71.8%. Es decir que el grupo que indicó que la sociedad **no respeta** su orientación sexual e identidad de género también afirma, en un **71.8%**, que el avance del reconocimiento de los derechos humanos es malo. Asimismo, del total de personas que indicaron que la sociedad peruana **si respeta su orientación sexual e identidad de género el 47.9% también manifestó un mal avance en el país**. 
 
@@ -381,7 +381,7 @@ grupo_violencia %>%
        y = "Grupos etáreos")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-20-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-20-1.png" width="672" />
 
 Del gráfico, podemos identificar que existen cuatro grupos etáreos que registran mayores porcentajes respecto a haber sido víctima de discriminación y/o violencia. El primer grupo etáreo es del rango de 25 a 29 años con un 65.1%, el segundo de 30 a 34 años con un 63.3%, el tercer grupo es del rango de 20 a 24 años con un 62.4% y el cuarto de 35 a 39 años con un 61.1%. 
 
@@ -402,7 +402,7 @@ espacios_violencia %>%
        y = "Espacios/Lugares")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-21-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
 De la información brindada, podemos observar que los espacios públicos como parques, playas, plazas y vía pública son identificados en un 39.2% como el principal ámbito en donde las personas LGBTI experimentaron ser víctimas de alguna muestra de discriminación y/o violencia. El segundo ámbito identificado es el educativo con un 34.1%. 
 
@@ -423,7 +423,7 @@ ejercen_violencia %>%
        y = "Personas / Perfiles")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-22-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-22-1.png" width="672" />
 Asimismo, considerando que los resultados posicionan como los principales perpetradores de discriminaicón y/o violancia hacia las personas LGBTI a compañeros(as) de escuela y padres de compañeros(as) con 33.1%, preocupa las consecuencias que estaría generando la violencia homofóbica o transfóbica en el ámbito educativo. 
 
 De acuerdo a la Defensoría del Pueblo (2015), este tipo de violencia genera en los estudiantes dificultades para prestar atención en clases, empeorar calificaciones, abandonar o cambiar de institución. 
@@ -460,7 +460,7 @@ organizaciones %>%
        y = "Tipo de organizaciones")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-23-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-23-1.png" width="672" />
 
 El gráfico nos muestra que del total de las personas encuestadas la mayoría (34%) no tiene ninguna vinculación con organizaciones. También indica que el segundo bloque mayoritario manifiesta que está vinculado con organizaciones LGBTI (18.2%)  y que entre los menores porcentajes se encuentra la participación en organizaciones políticas (3.7%)
 
@@ -479,7 +479,7 @@ acciones_organizaciones %>%
        y = "Acciones")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-24-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-24-1.png" width="672" />
 
 Según lo registrado, podemos observar que si bien la mayoría de personas encuestadas manifestó no pertenecer a ninguna organización no se encuentran ajenas a desarrollar acciones vinculadas a participación ciudadana. Así lo manifestó el 23.8% que indicó haber participado en una manifestación o marcha. Esta acción también es la que predomina en las personas que indicaron pertenecer a organizaciones LGBTI o de estudiantes y/o jóvenes. 
 
@@ -497,7 +497,7 @@ personasviol_organizaciones %>%
        y = "Tipo de organizaciones")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-25-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-25-1.png" width="672" />
 
 Ahora bien, respecto a las acciones de participación ciudadana desarrolladas por personas que experimentaron discriminación y/o violencia, identificamos que la mayoría opta por participar en una manifstación o marcha (53.3%); a este porcentaje le sigue un 33.3 que afirma haber desarrollado acciones vinculadas a votar por alguna autoridad. El menor porcentaje lo registra postular a cargos públicos con un 1.4%. 
 
@@ -514,7 +514,7 @@ personasviol_acciones %>%
        y = "acciones")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-26-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
 A partir de los resultados obtenidos, quisimos observar el nivel educativo al que pertenecen los encuestados por acciones. Para ello, calculamos en primer lugar la distribución de la muestra. Al respecto, ésta presenta como categorías con mayor porcentaje a **superior universitaria Incompleta con 29.3%** y **superior universitaria completa con 27.6%**, de acuerdo al siguiente gráfico. 
 
@@ -530,7 +530,7 @@ recuento_niveledu %>%
        y = "Nivel educativo")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-27-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-27-1.png" width="672" />
 
 En línea con el gráfico anterior, observamos que los resultados que arroja el siguiente podrían ser reflejo de los anteriores. En ese sentido, no permite ver que la categoría nivel educativo determine el desarrollo de las acciones participativas. 
 
@@ -545,7 +545,7 @@ niveleduc_participacion %>%
        y = "p101")
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-28-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
 A continuación observamos que del total de la población que manifestó experimentar alguna muestra de discrimininación y/o violencia, el mayor porcentaje de respuestas (64.7%) se ubica en el bloque de personas que indicaron **no expresar librevemete su orientación sexual o identidad de género** precisando que **no participa de ninguna acción**.El segundo porcentaje mayoritario también se ubica en el mismo bloque indicando *ser parte de procesos de presupuesto participativo** (61.5%). Respecto al bloque que indicó **expresar librevemte su orientación sexual o identidad de género** el 50.8% manifestó que **participó en reuniones con autoridades**, seguido de un 45.5% que señaló haber **mandado una carta a alguna autoridad**
 
@@ -563,7 +563,7 @@ expresion_participa %>%
        )
 ```
 
-![](02-LZM_files/figure-latex/unnamed-chunk-29-1.pdf)<!-- --> 
+<img src="02-LZM_files/figure-html/unnamed-chunk-29-1.png" width="672" />
 
 
 ## Conclusiones

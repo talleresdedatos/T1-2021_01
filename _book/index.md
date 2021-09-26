@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Compilación de productos de datos"
+author: "Calderon, S., Zuñiga, L."
 date: "2021-09-25"
 site: bookdown::bookdown_site
 documentclass: book
