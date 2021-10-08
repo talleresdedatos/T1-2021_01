@@ -1,16 +1,7 @@
 
-# Género, discriminación y participación ¿ciudadana? {#genero-y-discriminacion}
-  Un acercamiento a la data existente. 
+# Género, discriminación y participación ¿ciudadana?: Un acercamiento a la data existente.  {#genero-y-discriminacion}
 
 *Leanna Sofía de los Ángeles Zúñiga Montaño*
-
-```{r setup-leanna, include=FALSE}
-knitr::opts_chunk$set(
-	echo = TRUE,
-	message = FALSE,
-	warning = FALSE
-)
-```
 
 ## Introducción
 
