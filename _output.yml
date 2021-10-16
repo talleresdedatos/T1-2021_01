@@ -1,5 +1,6 @@
 bookdown::bs4_book:
   css: bs4_style.css
+  template: template/bs4_book.html
   theme:
     primary: "#096B72"
   repo: https://github.com/talleresdedatos/T1-2021_01
