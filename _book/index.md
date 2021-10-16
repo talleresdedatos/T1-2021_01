@@ -1,57 +1,41 @@
 --- 
 title: "Compilación de productos de datos"
-author: "Calderon, S., Zuñiga, L."
-date: "2021-10-08"
+author: "Calderon, S., Zuñiga, L., Reyes, C., Bedoya, F."
+date: "2021-10-09"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::bs4_book,
-  set in the _output.yml file.
+  Este es un compilado de los productos de datos elaborados en el Taller de Elaboración de 
+  productos de datos I: R Markdown
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
 
-# About
+# Presentación {-}
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+Este libro digital es un esfuerzo conjunto de los participantes del Taller de Elaboración de productos de datos dictado durante cinco semanas entre los meses de agosto y setiembre de 2021 de manera gratuita. El taller tuvo como público objetivo a estudiantes o egresados de carreras de ciencias sociales, periodismo o educación con interés en aprender herramientas de análisis y visualización de datos. El contenido del taller buscó ser apropiado para personas sin experiencia con ningún lenguaje de programación.
 
-## Usage 
+A través del desarrollo de sesiones que combinaron teoría y práctica, se esperaba que los participantes adquieran las siguientes habilidades:
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+1. Elementos básicos del análisis de datos usando R a través de RStudio
+  - Importación de datos
+  - Limpieza y ordenamiento de datos
+  - Análisis exploratorio de datos ordenados (tidy data)
+2. Elaboración de reportes de análisis de datos usando R Markdown
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+Cabe mencionar que varios participantes de esta compilación son personas con experiencia previa en el taller. Debido a que la presentación del trabajo no es obligatoria al concluir el taller, se abre la posibilidad de que otras personas participen. Como se podrá apreciar en los capítulos que componen esta compilación, los participantes logran alcanzar los aprendizajes esperados.
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+Las presentaciones y ejercicios resueltos de las sesiones se encuentran en el perfil de Rpubs.com del usuario [talleresdedatos](https://rpubs.com/talleresdedatos). También es posible acceder al [repositorio en Github](https://github.com/talleresdedatos/T1-2021_01) de este libro digital.
 
-## Render book
+A quien lea esta compilación le hago recordar que los trabajos son realizados por personas que están en proceso de afianzar sus habilidades escribiendo código en R. Es posible que encuentren algunos bloques de código que se podían escribir mejor, pero he preferido mantener esas imperfecciones para que en el futuro las personas que escribieron el código puedan medir su progreso.
 
-You can render the HTML version of this example book without changing anything:
+*Samuel Calderon*
 
-1. Find the **Build** pane in the RStudio IDE, and
+## Advertencia {-}
 
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-
-```r
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-
-```r
-bookdown::serve_book()
-```
-
+En esta ocasión, tuve una participación más directa orientando a los autores con ideas y, en casos muy específicos, con secciones de código necesario para plasmar sus ideas propias. La elección de los conjuntos de datos, paquetes, preguntas de investigación, gráficos y redacción en general quedó en manos de cada autor. En la edición de cada artículo, no se realizó una exhaustiva revisión de ortografía o gramática, ya que esto escapa de los objetivos del taller (y es responsabilidad de cada persona cuidar lo que presenta en público). 
 
 

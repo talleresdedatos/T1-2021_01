@@ -12,41 +12,38 @@ knitr::opts_chunk$set(
 
 # graficos tema en común
 
-# default
-theme_set(theme_grey())
-
-# theme_td
-
 theme_td <- function() {
   ggthemes::theme_clean(base_size = 11) +
-    theme(
-      strip.background = element_rect(fill = "grey95"),
-      strip.placement = "outside",
-      strip.text = element_text(hjust = 0), 
-      # panel.background = element_rect(fill = "grey98"),
-      panel.spacing = unit(3, units = "mm")
+    ggplot2::theme(
+      # panel.border = element_rect(color =  alpha("#007F7F", 0.25), fill = NA, linetype = 2),
+      panel.spacing = ggplot2::unit(3, units = "mm"),
+      strip.text = ggplot2::element_text(hjust = 0, face = "bold", colour = "#003F3F"), 
+      strip.background = ggplot2::element_rect(fill = ggplot2::alpha("#007F7F", 0.25)),
+      strip.placement = "inside",
+      legend.position = "top",
+      legend.background = ggplot2::element_blank(),
+      legend.text = ggplot2::element_text(size = 9)
     ) 
 }
 
-update_geom_defaults("label", list(hjust = "inward", size = 3))
-update_geom_defaults("col", list(fill = "#007f7f"))
+# theme_td
+ggplot2::theme_set(theme_td())
 
-sociedad_respeta %>% 
-  ggplot(aes(porcentaje, p501)) +
-  geom_col() +
-  geom_label(aes(label = round(porcentaje, 1)))+
-  labs(title = "Respeto a la orientación sexual/identidad de género", 
-       caption = "Fuente: INEI- Primera Encuesta para personas LGBTI 2017") +
-  labs(x = "Porcentaje",
-       y = "Percepción de personas LGBTI") +
-  theme_td() 
+# update geoms
+ggplot2::update_geom_defaults("label", list(hjust = "inward", size = 3))
+ggplot2::update_geom_defaults("col", list(fill = "#009f9f"))
+ggplot2::update_geom_defaults("line", list(size = 1.5, linetype = 1, color = ggplot2::alpha("#007F7F", 0.25)))
 
-respeta_reconoce %>% 
-  ggplot(aes(porcentaje, p504)) +
-  geom_col() +
-  facet_grid(rows = "p501")+
-  geom_label(aes(label = round(porcentaje, 1)))+
-  labs(caption = "Fuente: INEI- Primera Encuesta para personas LGBTI 2017") +
-  labs(x = "Porcentaje",
-       y = "Recocimiento de derechos humanos en personas LGBTI") +
-  theme_td()
+# default fill and color scale
+scale_fill_brewer_d <- function(...) {
+  ggplot2::scale_fill_brewer(palette = "Set2", ...)
+}
+
+scale_color_brewer_d <- function(...) {
+  ggplot2::scale_color_brewer(palette = "Set2", ...)
+}
+
+options(
+  ggplot2.discrete.fill = scale_fill_brewer_d,
+  ggplot2.discrete.colour = scale_color_brewer_d
+)

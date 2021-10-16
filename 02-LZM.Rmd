@@ -202,7 +202,7 @@ acciones_organizaciones <- dataLGBTI %>%
   filter(tipo_organizacion %in%c("p401_11", "p401_4", "p401_5")) %>%
   filter(acciones %in%c("p402_1", "p402_2", "p402_6")) %>%
   mutate(tipo_organizacion = change_id(tipo_organizacion, mis_variables))%>%
-  mutate(tipo_organizacion = str_squish(tipo_organizacion) %>% str_remove(".*: ") %>% str_wrap(40)) %>%
+  mutate(tipo_organizacion = str_squish(tipo_organizacion) %>% str_remove(".*: ")) %>%
   mutate(acciones = change_id(acciones, mis_variables)) %>% 
   mutate(acciones = str_squish(acciones) %>% str_remove(".*: ") %>% str_wrap(40))
 
@@ -492,7 +492,7 @@ En línea con el gráfico anterior, observamos que los resultados que arroja el 
 niveleduc_participacion %>% 
   ggplot(aes(porcentaje, acciones)) +
   geom_col(aes(fill = p101)) +
-  geom_label(aes(label = round(porcentaje, 1)), position = position_stack())+
+  geom_label(aes(label = round(porcentaje, 1)), position = position_stack(vjust = 0.5))+
   labs(caption = "Fuente: INEI- Primera Encuesta para personas LGBTI 2017") +
   labs(x = "Porcentaje",
        y = "p101")

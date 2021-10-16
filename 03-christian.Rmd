@@ -275,7 +275,6 @@ Podríamos decir que el congreso se conforma a imagen y semejanza del voto ciuda
 Para esta acápite se toma en cuenta información histórica de las elecciones realizadas desde 1995 hasta 2016; ello permititirá apreciar las variaciones ocurridas elección tras elección, graficado de manera porcentual, al número de mujeres que conformaron las listas congresales.
 
 ```{r}
-
 historico %>%
 ggplot(aes(Año_eleccion, porcentaje)) +
   geom_line(aes(color = Sexo, group = Sexo))+
@@ -410,7 +409,7 @@ Este año de elección muestra una distribución significativamente diferente al
 brechas2001  %>%
   ggplot(aes(promedio, `Distrito Electoral`)) +
   geom_line(aes(group = `Distrito Electoral`), size = 1.5, linetype = 1) +
-  geom_point(aes(color = Sexo), size = 5)
+  geom_point(aes(color = Sexo), size = 3)
 ```
 
 #### Elecciones 2006
@@ -420,8 +419,8 @@ Este año de elección resulta significativamente distinta al año de elección 
 ```{r}
 brechas2006  %>%
   ggplot(aes(promedio, `Distrito Electoral`)) +
-  geom_line(aes(group = `Distrito Electoral`), size = 1.5, linetype = 1) +
-  geom_point(aes(color = Sexo), size = 5)
+  geom_line(aes(group = `Distrito Electoral`)) +
+  geom_point(aes(color = Sexo), size = 3)
 ```
 
 #### Elecciones 2011
@@ -433,8 +432,8 @@ Hasta este periodo de análisis podemos apreciar que una ligera reducción de ex
 ```{r}
 brechas2011  %>%
   ggplot(aes(promedio, `Distrito Electoral`)) +
-  geom_line(aes(group = `Distrito Electoral`), size = 1.5, linetype = 1) +
-  geom_point(aes(color = Sexo), size = 5)
+  geom_line(aes(group = `Distrito Electoral`)) +
+  geom_point(aes(color = Sexo), size = 3)
 ```
 
 #### Elecciones 2016
@@ -446,8 +445,8 @@ No obstente, para el análisis de riesgos podemos evidenciar una tendencia de am
 ```{r}
 brechas2016  %>%
   ggplot(aes(promedio, `Distrito Electoral`)) +
-  geom_line(aes(group = `Distrito Electoral`), size = 1.5, linetype = 1) +
-  geom_point(aes(color = Sexo), size = 5)
+  geom_line(aes(group = `Distrito Electoral`)) +
+  geom_point(aes(color = Sexo), size = 3)
 ```
 
 Este análisis determina las grandes brechas que existen respecto a la participación real de las mujeres en las listas para elecciones congresales, pues durante los años de muestreo se evidencia un tendencia de ensanchamiento de extremos, pero a la par existe una ligera tendencia de reducción en unos de los distritos con mayor número de escaños (Lima). 
@@ -463,7 +462,9 @@ porcentaje_listas %>%
   left_join(brechas_listas) %>% 
   filter(Año_eleccion == '2016') %>%
   ggplot(aes(diferencia, porcentaje, color = `Distrito Electoral`))+
-  geom_point() 
+  geom_point() +
+  scale_color_hue() +
+  guides(color = guide_legend(title.position = "top", title.hjust = 0.5))
 ```
 
 Este gráfico nos muestra la relación directa que existe ente una reducción de brechas con un mayor porcentaje de mujeres que participan una lista de candidatos, Pues San Martin quien se sitúa en el extremo superior izquierdo tiene un  53.33% de mujeres en lista congresal y una brecha de 15.17%, mientras que Apurimac, que se situa en el extremo inferior derecho, tiene un 30.43% de mujeres y una brecha de 64.28%.

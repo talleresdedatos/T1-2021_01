@@ -1,6 +1,7 @@
 book_filename: "T1-2021-01"
 new_session: true
 before_chapter_script: _common.R
+output_dir: docs
 delete_merged_file: true
 language:
   ui:
