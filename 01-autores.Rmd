@@ -4,13 +4,9 @@
 
 Politólogo de la Pontificia Universidad Católica del Perú. Diplomado en Industrias Extractivas y Desarrollo por la PUCP y Políticas Públicas por la Universidad del Pacífico. Nacido en Lima, Perú. Cuenta con experiencia profesional en la gestión de proyectos de desarrollo y gestión de recursos naturales con organismos internacionales y organizaciones de la sociedad civil. Anteriormente ha llevado algunos cursos de R y quisiera usarlo de manera más recurrente en el análisis y gestión de información. Tiene interés en áreas de gestión y análisis de información social y económica para la implementación de proyectos sociales y alianzas estratégicas multi-actor que promuevan el desarrollo sostenible.
 
-## Jennifer Ponce {-}
-
 ## Christian Reyes {-}
 
 Politólogo de la Universidad Antonio Ruiz de Montoya. Previo al taller no ha tenido experiencia en el uso de R para el análisis de datos, pero sí el uso de herramientas como Microsoft Excel. Sus últimas experiencias laborales fueron dentro del sector público (Ministerio de Transportes y Comunicaciones, y Ministerio de Vivienda, Construcción y Saneamiento) realizando labores de elaboración y análisis de encuestas y cuestionarios, monitoreo del curso virtual “Programa para Formadores de Integridad” y Seguimiento al Plan de Lucha Contra la Corrupción del sector Vivienda. Le interesan los temas de sistemas electorales, participación y representación política, ética e integridad, entre otros.
-
-## Almendra Rodriguez {-}
 
 ## Leanna Sofía de los Ángeles Zúñiga Montaño {-}
 
