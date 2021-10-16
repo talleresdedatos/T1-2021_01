@@ -1,9 +1,9 @@
 bookdown::bs4_book:
+  theme: 
+    primary: "#0d6d83"
+  repo: https://github.com/talleresdedatos/T1-2021_01
   css: bs4_style.css
   template: template/bs4_book.html
-  theme:
-    primary: "#096B72"
-  repo: https://github.com/talleresdedatos/T1-2021_01
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

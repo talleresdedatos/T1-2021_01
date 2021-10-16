@@ -7,7 +7,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   echo = TRUE,
   warning = FALSE,
-  message = FALSE
+  message = FALSE,
+  tidy=TRUE, 
+  tidy.opts=list(arrow=TRUE, indent=2)
   )
 
 # graficos tema en común

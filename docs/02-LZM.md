@@ -15,9 +15,9 @@ Así, para autores como Restrepo (2005) la denominada democracia radical es fort
 
 Según vamos observando, la participación en lo público es una constante al pensar sobre la democracia y es una condición necesaria que supone la intervención de los ciudadanos y ciudadanas en las deliberaciones colectivas, construcción de actores sociales y articulación de identidades e intereses. 
 
-Por tal razón, nos resulta interesante explorar la relación entre género, discriminación y participación ciudadana en Perú, en un contexto donde las personas LGBTQ+, consideradas como parte de los grupos especiales de protección, continúan movilizándose a razón de la sistemática discriminación y exclusión a las que son sometidas por el Estado y otras instancias privadas. En ese sentido, el presente proyecto plantea como pregunta de investigación ¿ Cómo manifiesta la participación política las personas LGBTQ+?. 
+Por tal razón, nos resulta interesante explorar la relación entre género, discriminación y participación ciudadana en Perú, en un contexto donde las personas LGBTQ+, consideradas como parte de los grupos especiales de protección, continúan movilizándose a razón de la sistemática discriminación y exclusión a las que son sometidas por el Estado y otras instancias privadas. En ese sentido, el presente proyecto plantea como pregunta de investigación ¿ Cómo manifiesta la participación ciudadana las personas LGBTQ+?. 
 
-Para ello, exploramos qué tipo de información estadística se había generado desde el Estado u otros espacios con la finalidad de emplearla como material principal para la obtención de resultados. No obstante, de la exploración identificamos que la única fuente con información estadística disponible para ser empleada en el software R era la base de datos de la Primera Encuesta Virtual para las personas LGBTI, elaborada el 2017 por el Instituto Nacional de Estadística e Informática (INEI). 
+Para ello, exploramos qué tipo de información estadística se había generado desde el Estado u otros espacios con la finalidad de emplearla como material principal para la obtención de resultados. No obstante, de la exploración identificamos que la única fuente con información estadística disponible de manera pública para ser empleada en el software R era la base de datos de la Primera Encuesta Virtual para las personas LGBTI, elaborada el 2017 por el Instituto Nacional de Estadística e Informática (INEI). 
 
 Si bien existen otras encuestas realizadas como la I y II Encuesta Nacional de Derechos Humanos que recoge información relevante sobre esta comunidad, lamentablemente no se dispone del acceso público a sus bases de datos. Por ello, el presente proyecto tomará como base los resultados obtenidos del análisis a la base de datos de la Primera Encuesta Virtual para las personas LGBTI y como insumos las estadísticas presentadas en informes relevantes como el de la II Encuesta Nacional de Derechos Humanos, Comportamiento Electoral LGBTQ+ en Perú y otros. 
 
@@ -76,8 +76,8 @@ A partir de la lectura de la base de datos y la obtención del valor de las etiq
 
 1. Sobre características sociodemográficas: p101, vinculada a los niveles educativos declarados por las personas encuestadas.
 2. Sobre identidad, cuerpo y sexualidad: p116, a través de la que se recoge la respuesta a la pregunta ¿usted expresa sin temor su orientación sexual y/o identidad de género?
-3. Sobre discriminación y violencia: p201, p202, p203, a través de las que se recoge información sobre experiencias de discriminaicón y/o violencia, espacios/lugares/ámbitos de violencia y personas que perpetraron discriminación y/o violencia, respectivamente. 
-4. Sobre participación ciudadana: p401 y p402, las que permiten identificar si existe alguna vinculación con organizaciones y cuáles han sido las acciones de participacion ciudadanas desarrolladas, respectivamente. 
+3. Sobre discriminación y violencia: p201, p202, p203, a través de las que se recoge información sobre experiencias de discriminación y/o violencia; espacios/lugares/ámbitos de violencia y personas que perpetraron discriminación y/o violencia, respectivamente. 
+4. Sobre participación ciudadana: p401 y p402, las que permiten identificar si existe alguna vinculación con organizaciones y cuáles han sido las acciones de participación ciudadanas desarrolladas, respectivamente.  
 
 
 Las variables identificadas permitirán responder a las siguientes preguntas: 
@@ -88,7 +88,7 @@ Las variables identificadas permitirán responder a las siguientes preguntas:
 4. ¿Cuáles son los principales espacios donde se ejerce violencia hacia miembros de la comunidad LGBTIQ?.
 5. ¿Quiénes ejercen violencia hacia  miembros de la comunidad LGBTIQ en los espacios que habita?.
 6. ¿Cómo manifiesta la participación ciudadana las personas LGBTI  que experimentaron violencia y discriminación?.
-7. ¿Cuáles son las principales acciones de carácter políticos en las que participan los miembros de la comunidad LGBTI que experimentaron violencia y discriminación?.
+7. ¿Cuáles son las principales acciones de paticipación ciudadana en las que participan los miembros de la comunidad LGBTI que experimentaron violencia y discriminación?.
 
 
 ### Limpieza u ordenamiento de datos  
@@ -119,7 +119,7 @@ sociedad_reconoce <- dataLGBTI %>%
 ```
 
 
-Posterior a ello, se creo la data frame denominada `respeta_reconoce` en donde se almacena la información que cruza los resultados sobre respecto a la orientación de género e identidad sexual y el reconocimiento de los derechos humanos de las personas LGBTI. 
+Posterior a ello, se creó la data frame denominada `respeta_reconoce` en donde se almacena la información que cruza los resultados respecto a la orientación de género e identidad sexual y el reconocimiento de los derechos humanos de las personas LGBTI. 
 
 
 ```r
@@ -215,7 +215,7 @@ acciones_organizaciones <- dataLGBTI %>%
   mutate(acciones = str_squish(acciones) %>% str_remove(".*: ") %>% str_wrap(40))
 ```
 
-A partir de lo anterior, resultó relevante para fines de la investigación identificar, del total de personas que declararon haber experimentado alguna manifestación de discriminación y/o violencia, el recuento y porcentaje de los principales tipos de organizaciones a los que están vinculados. Asimismo, fue necesario ejecutar un bloque de códigos que nos permita conocer las acciones de participaicón ciudada desarrolladas por ellas. La información obtenida fue registradas en los objetos `personasviol_organizaciones` y `personasviol_acciones`. 
+A partir de lo anterior, resultó relevante para fines de la investigación identificar, del total de personas que declararon haber experimentado alguna manifestación de discriminación y/o violencia, el recuento y porcentaje de los principales tipos de organizaciones a los que están vinculados. Asimismo, fue necesario ejecutar un bloque de códigos que nos permita conocer las acciones de participación ciudada desarrolladas por ellas. La información obtenida fue registradas en los objetos `personasviol_organizaciones` y `personasviol_acciones`. 
 
 
 ```r
@@ -245,7 +245,7 @@ personasviol_acciones <- dataLGBTI %>%
   mutate(acciones = str_squish(acciones) %>% str_remove(".*: ") %>% str_wrap(40)) 
 ```
 
-En línea con lo anterior, quisimos extraer información sobre el nivel educativo de aquellas personas que indicaron haber experimentado alguna manifestación de discriminación y/o violencia y haber desarrollado alguna acción de participaicón ciudadana. Al respecto, se debe indicar que para identificar los principales niveles educativos se filtro los resultados con porcentaje mayor a 28. Los resultados del siguiente bloque de códigos se registraron en la data frame `niveleduc_participación`.
+En línea con lo anterior, quisimos extraer información sobre el nivel educativo de aquellas personas que indicaron haber experimentado alguna manifestación de discriminación y/o violencia y haber desarrollado alguna acción de participación ciudadana. Al respecto, se debe indicar que para identificar los principales niveles educativos se filtró los resultados con porcentaje mayor a 28. Los resultados del siguiente bloque de códigos se registraron en la data frame `niveleduc_participación`.
 
 
 ```r
@@ -299,7 +299,7 @@ expresion_participa <- dataLGBTI %>%
 
 ### Aún nos están estigmatizando: Percepción sobre el respeto y avance en el reconocimiento de los derechos humanos. 
 
-En el año 2015, la Defensoría del Pueblo indicó, a través del Informe Derechos Humanos de las personas LGBTI: Necesidad de una política pública para la igualdad en el Perú que "además de cambios institucionales, legales y de política pública, se debe transformar las mentes y las consciencias de las personas para el respeto por la diversidad y erradicar la discriminación" (pág. 12)
+En el año 2015, la Defensoría del Pueblo indicó, a través del Informe Derechos Humanos de las personas LGBTI: Necesidad de una política pública para la igualdad en el Perú que "además de cambios institucionales, legales y de política pública, se debe transformar las mentes y las consciencias de las personas para el respeto por la diversidad y erradicar la discriminación".
 
 Al respecto, empleando un bloque de códigos podemos graficar a través de una barra de datos, la percepción que las personas LGBTI tuvieron en torno al respeto de la población hacia su orientación de género e identidad de género, además del avance en el reconocimiento de sus derechos humanos en el año 2017. 
 
@@ -352,15 +352,15 @@ respeta_reconoce %>%
 
 <img src="02-LZM_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
-En función al gráfico, podemos observar que del total de personas encuestadas, el mayor porcentaje se ubica en el bloque "No" con un 71.8%. Es decir que el grupo que indicó que la sociedad **no respeta** su orientación sexual e identidad de género también afirma, en un **71.8%**, que el avance del reconocimiento de los derechos humanos es malo. Asimismo, del total de personas que indicaron que la sociedad peruana **si respeta su orientación sexual e identidad de género el 47.9% también manifestó un mal avance en el país**. 
+En función al gráfico, podemos observar que del total de personas encuestadas, **el mayor porcentaje se ubica en el bloque "No" con un 71.8%**. Es decir que **el grupo que indicó que la sociedad no respeta su orientación sexual e identidad de género también afirma, en un 71.8%, que el avance del reconocimiento de los derechos humanos es malo**. Asimismo, del total de personas que indicaron que la sociedad peruana si respeta su orientación sexual e identidad de género el 47.9% también manifestó un mal avance en el país. 
 
-De acuerdo al Informe de la II Encuesta Nacional de Derechos Humanos, para el 2019, la población LGBTI que fue encuestada manifestó que el derecho que percibe como más vulnerado es el de un trato digno y no ser discriminación (51%). De acuerdo a las estadísticas, el segundo derecho vulnerado sería la libertad de expresión y opinión (37%). Asimismo, el informe indica que un grupo de la población peruana (45%) considera que la homosexualidad es producto de algún trauma o que las personas trans viven confundidas. 
+De acuerdo al Informe de la II Encuesta Nacional de Derechos Humanos, para el 2019, la población LGBTI que fue encuestada manifestó que el derecho que percibe como más vulnerado es el de un trato digno y no ser discriminación (51%). De acuerdo a las estadísticas, el segundo derecho vulnerado sería la libertad de expresión y opinión (37%). Asimismo, el informe indica que un grupo de la población peruana (45%) considera que la homosexualidad es producto de algún trauma o que las personas trans viven confundidas.  
 
 
 
 ### El maltrato gratuito: Espacios y perpetradores de discriminación y/o violencia. 
 
-En relación con los resultados anteriores, resulta importante mencionar que en el Informe Defensorial N° 175, la Defensoría del Pueblo advertía que las personas LGBTI son víctimas de violencia y discriminación a razón de los estigmas, estereotios y prejuicios vinculados a su orientación sexual y/o identidad de género. 
+En relación con los resultados anteriores, es importante mencionar que en el Informe Defensorial N° 175, la Defensoría del Pueblo advertía que las personas LGBTI son víctimas de violencia y discriminación a razón de los estigmas, estereotipos y prejuicios vinculados a su orientación sexual y/o identidad de género. 
 
 En ese sentido, cobra sustento que en el 2017, el 63% de encuestadas que participaron de la Primera Encuesta Virtual para personas LGBTI hayan indicado haber sido víctimas de actos de discriminación y/o violencia.
 
@@ -401,11 +401,11 @@ espacios_violencia %>%
 
 <img src="02-LZM_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
-De la información brindada, podemos observar que los espacios públicos como parques, playas, plazas y vía pública son identificados en un 39.2% como el principal ámbito en donde las personas LGBTI experimentaron ser víctimas de alguna muestra de discriminación y/o violencia. El segundo ámbito identificado es el educativo con un 34.1%. 
+De la información brindada, podemos observar que los **espacios públicos como parques, playas, plazas y vía pública** son identificados en un 39.2% como el principal ámbito en donde las personas LGBTI experimentaron ser víctimas de alguna muestra de discriminación y/o violencia. El segundo ámbito identificado es el **educativo** con un 34.1%. 
 
 Si consideramos que actualmente no se cuenta con una segunda encuesta virtual para personas LGBTI u otro instrumento específico para esta población que permita recabar información estadística desde el Estado, los resultados presentados durante el 2017 son preocupantes porque evidencian que los espacios públicos son asimilados como ámbitos inseguros para personas LGBTI, en donde existe una potencial vulneración al derecho a un trato digno y libertad de expresión y opinión. 
 
-Para autoras como Fraser, la instalación de una esfera pública homogénea aisla los espacios discursivos, cierra la puertas al debate e imposibilita la igualdad de participación debido a un marco institucional que crea grupos sociales dominanres y subordinados (1997, pag 95-133)
+Para autoras como Fraser, la instalación de una esfera pública homogénea aisla los espacios discursivos, cierra la puertas al debate e imposibilita la igualdad de participación debido a un marco institucional que crea grupos sociales dominantes y subordinados (Fraser 1997:95-133)
 
 
 
@@ -421,28 +421,29 @@ ejercen_violencia %>%
 ```
 
 <img src="02-LZM_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+
 Asimismo, considerando que los resultados posicionan como los principales perpetradores de discriminaicón y/o violancia hacia las personas LGBTI a compañeros(as) de escuela y padres de compañeros(as) con 33.1%, preocupa las consecuencias que estaría generando la violencia homofóbica o transfóbica en el ámbito educativo. 
 
 De acuerdo a la Defensoría del Pueblo (2015), este tipo de violencia genera en los estudiantes dificultades para prestar atención en clases, empeorar calificaciones, abandonar o cambiar de institución. 
 
-Junto con ello, también resulta importante leer estos resultados en su relación con la construcción de la ciudadanía y la democracia. A saber, según estudios que analizan ambos temas, las familias esperan que la democracia y la escuela ayuden a construir mejores condiciones de vida y oportunidades. En esa línea, el ámbito educativo es crucial para mejorar la relación entre ciudadanos, Estado y demoracia si el sistema educativo brinda un servicio de calidad para todos y todas (2015, pág 6) 
+Junto con ello, también resulta importante leer estos resultados en su relación con la construcción de la ciudadanía y la democracia. A saber, según estudios que analizan ambos temas, las familias esperan que la democracia y la escuela ayuden a construir mejores condiciones de vida y oportunidades. En esa línea, el ámbito educativo es crucial para mejorar la relación entre ciudadanos, Estado y demoracia si el sistema educativo brinda un servicio de calidad para todos y todas (Jorge,A.; Cruz, M.; Belaúnde, C.; Eguren,M.; Gonzáles N.; Román,A.2016:6)  
 
 
 ### Participación ¿ciudadana?: Vinculación con organizaciones y principales acciones.  
 
-Al igual que el término democracia, el termino participación ciudadana ha sido empleado de manera diversa, en contextos y propósitos diferenciados. Para autores como Serrano, resulta importante diferenciar la participación ciudadana y la participación política ciudadana; para él (2009), tomando como referencia a Cunill, la participación ciudadana está orientada a promover y crear nuevos mecanismos para que la administración conozca mejor las actividades de sus administrados; en ese sentido, se pueda generar una colaboración conjunta para la ejecución de algunas tareas o se sustituya al Estado en la relación de determinadas funciones. 
+Al igual que el término democracia, el término participación ciudadana ha sido empleado de manera diversa, en contextos y propósitos diferenciados. Para autores como Serrano, resulta importante diferenciar la participación ciudadana y la participación política ciudadana; para él (2009), tomando como referencia a Cunill, la participación ciudadana está orientada a promover y crear nuevos mecanismos para que la administración conozca mejor las actividades de sus administrados; en ese sentido, se pueda generar una colaboración conjunta para la ejecución de algunas tareas o se sustituya al Estado en la relación de determinadas funciones. 
 
 En esa línea, considera que la participación ciudadana puede ser comprendida como una herramienta importante que ayuda a advertir la necesidad de optimizar los procedimientos institucionales frente a la pérdida de eficacia de sus mecanismos tradicionales. Así, la participación ciudadana puede ser ubicada como herramienta para la  gestión.
 
-Diferente a ello, menciona que la participación política ciudadana se ejerce cuando existe un interés de tipo político; es decir, "la búsqueda de la trascendencia e incidencia de las opiniones de los particulares en la toma de decisiones de interéses públicos que de manera tradicional están en manos de partidos políticos y grupos de poder"
+Diferente a ello, menciona que la participación política ciudadana se ejerce cuando existe un interés de tipo político; es decir, "la búsqueda de la trascendencia e incidencia de las opiniones de los particulares en la toma de decisiones de intereses públicos que de manera tradicional están en manos de partidos políticos y grupos de poder".
 
-Para fines del presente proyecto, nos resulta interesante tomar la propuesta de Velásquez (2010), quien habla de la participación como proceso que no se restringue a lo institucional-normativo. Para él, la participaicón ciudadana "es el proceso mdiante el cual diferntes actores (sociales, económicos, políticos), en forma individual o colectiva y en función de sus necesidades, intereses, recursos y motivaciones, intervienen en el escenario públilco con el fin de obtener bienes y sercicios públicos y/o de incidir en la definición de ausntos de interpes colectivo" 
+Para fines del presente proyecto, nos resulta interesante tomar la propuesta de Velásquez (2010), quien habla de la participación como proceso que no se restringue a lo institucional-normativo. Para él, la participación ciudadana "es el proceso mdiante el cual diferntes actores (sociales, económicos, políticos), en forma individual o colectiva y en función de sus necesidades, intereses, recursos y motivaciones, intervienen en el escenario público con el fin de obtener bienes y sercicios públicos y/o de incidir en la definición de asuntos e intereses colectivo" 
 
-Así, diferencia este tipo de participación de la político-electoral, oarticipaicón social o comunitaria Para él se trata de la incidencia en la formulación, ejecución y seguimiento de las políticas públicas. 
+Así, diferencia este tipo de participación de la político-electoral, participación social o comunitaria. Para él se trata de la incidencia en la formulación, ejecución y seguimiento de las políticas públicas. 
 
 En tal sentido, es relevante indicar que, en función a la revisión de la data y la manera en cómo se encuentran configuradas las preguntas sobre participación ciudadana, no se cuenta con información suficiente que ayude a comprender la repercusión o incidencia que las personas LGBTI estarían generando en el marco del ciclo de las políticas públicas. A diferencia de ello, solo sería posible identificar la vinculación que tienen con determinados tipos de organizaciones y las principales acciones que desarrollan.  
 
-En ese sentido, a continuación se presenta un gráfico con la distribución porcentual de los principales tipos de organización a los que estarían adcritas o con las que mantendrían vinculación las personas LGBTI. 
+En ese sentido, a continuación se presenta un gráfico con la distribución porcentual de los principales tipos de organización a los que estarían adscritas o con las que mantendrían vinculación las personas LGBTI. 
 
 
 
@@ -459,7 +460,7 @@ organizaciones %>%
 
 <img src="02-LZM_files/figure-html/unnamed-chunk-23-1.png" width="672" />
 
-El gráfico nos muestra que del total de las personas encuestadas la mayoría (34%) no tiene ninguna vinculación con organizaciones. También indica que el segundo bloque mayoritario manifiesta que está vinculado con organizaciones LGBTI (18.2%)  y que entre los menores porcentajes se encuentra la participación en organizaciones políticas (3.7%)
+El gráfico nos muestra que del total de las personas encuestadas **la mayoría (34%) no tiene ninguna vinculación con organizaciones**. También indica que el segundo bloque mayoritario manifiesta que está vinculado con organizaciones LGBTI (18.2%)  y que entre los menores porcentajes se encuentra la participación en organizaciones políticas (3.7%)
 
 En relación a la vinculación con alguna organización o no, el gráfico que se muestra a continuación muestra las principales acciones en las que participan los miembros de la comunidad LGBTI.
 
@@ -478,9 +479,9 @@ acciones_organizaciones %>%
 
 <img src="02-LZM_files/figure-html/unnamed-chunk-24-1.png" width="672" />
 
-Según lo registrado, podemos observar que si bien la mayoría de personas encuestadas manifestó no pertenecer a ninguna organización no se encuentran ajenas a desarrollar acciones vinculadas a participación ciudadana. Así lo manifestó el 23.8% que indicó haber participado en una manifestación o marcha. Esta acción también es la que predomina en las personas que indicaron pertenecer a organizaciones LGBTI o de estudiantes y/o jóvenes. 
+Según lo registrado, podemos observar que si bien la mayoría de personas encuestadas manifestó no pertenecer a ninguna organización no se encuentran ajenas a desarrollar acciones vinculadas a participación ciudadana. Así lo manifestó **el 23.8% que indicó haber participado en una manifestación o marcha**. Esta acción también es la que predomina en las personas que indicaron pertenecer a organizaciones LGBTI o de estudiantes y/o jóvenes. 
 
-Para fines de la investigación, nos parece relevante los resultados obtenidos en el siguiente gráfico. De acuerdo a la información, no existen cambios porcentuales respecto a la participación o vinculación a una organización en personas que indicaron haber sido víctimas de discriminación y violencia. Al respecto, también observamos que del total de personas la mayoría no se encuentra vinculada con ninguna organización (41%);asimismo, el segundo grupo mayoritario también indica pertenecer a organizaciones LGBTI (24%), seguido de un 14.7 que mantiene vinculación con organizacones de estudiantes y/o jóvenes. Entre los menores porcentajes también se ubican las organizaciones políticas (4.4%).
+Para fines de la investigación, nos parece relevante los resultados obtenidos en el siguiente gráfico. De acuerdo a la información, no existen cambios porcentuales respecto a la participación o vinculación a una organización en personas que indicaron haber sido víctimas de discriminación y violencia. Al respecto, también observamos que del total de personas **la mayoría no se encuentra vinculada con ninguna organización (41%)**;asimismo, el segundo grupo mayoritario también indica pertenecer a organizaciones LGBTI (24%), seguido de un 14.7 que mantiene vinculación con organizacones de estudiantes y/o jóvenes. Entre los menores porcentajes también se ubican las organizaciones políticas (4.4%).
 
 
 ```r
@@ -496,7 +497,7 @@ personasviol_organizaciones %>%
 
 <img src="02-LZM_files/figure-html/unnamed-chunk-25-1.png" width="672" />
 
-Ahora bien, respecto a las acciones de participación ciudadana desarrolladas por personas que experimentaron discriminación y/o violencia, identificamos que la mayoría opta por participar en una manifstación o marcha (53.3%); a este porcentaje le sigue un 33.3 que afirma haber desarrollado acciones vinculadas a votar por alguna autoridad. El menor porcentaje lo registra postular a cargos públicos con un 1.4%. 
+Ahora bien, respecto a las acciones de participación ciudadana desarrolladas por personas que experimentaron discriminación y/o violencia, identificamos que **la mayoría opta por participar en una manifestación o marcha (53.3%)**; a este porcentaje le sigue un 33.3 que afirma haber desarrollado acciones vinculadas a votar por alguna autoridad. **El menor porcentaje lo registra postular a cargos públicos con un 1.4%**. 
 
 
 
@@ -544,7 +545,7 @@ niveleduc_participacion %>%
 
 <img src="02-LZM_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
-A continuación observamos que del total de la población que manifestó experimentar alguna muestra de discrimininación y/o violencia, el mayor porcentaje de respuestas (64.7%) se ubica en el bloque de personas que indicaron **no expresar librevemete su orientación sexual o identidad de género** precisando que **no participa de ninguna acción**.El segundo porcentaje mayoritario también se ubica en el mismo bloque indicando *ser parte de procesos de presupuesto participativo** (61.5%). Respecto al bloque que indicó **expresar librevemte su orientación sexual o identidad de género** el 50.8% manifestó que **participó en reuniones con autoridades**, seguido de un 45.5% que señaló haber **mandado una carta a alguna autoridad**
+A continuación observamos que del total de la población que manifestó experimentar alguna muestra de discrimininación y/o violencia, el mayor porcentaje de respuestas (64.7%) se ubica en el bloque de personas que indicaron **no expresar librevemete su orientación sexual o identidad de género** precisando que **no participa de ninguna acción**.El segundo porcentaje mayoritario también se ubica en el mismo bloque indicando *ser parte de procesos de presupuesto participativo** (61.5%). Respecto al bloque que indicó **expresar librevemte su orientación sexual o identidad de género** el 50.8% manifestó que **participó en reuniones con autoridades**, seguido de un 45.5% que señaló haber **mandado una carta a alguna autoridad**.
 
 
 ```r
@@ -571,26 +572,26 @@ De acuerdo a los porcentajes obtenidos se concluye que las personas que indicaro
 
 Si bien el INEI no ha desarrollado la Segunda Encuesta Virtual para personas LGBTI u otra encuesta orientada específicamente a obtener información sobre este grupo poblacional, se cuenta con información estadística generada por otros entidades o instituciones que guardar coherencia con la obtenida en la Primera Encuesta Virtual para personas LGBTI. Por ejemplo, la II Encuesta de Derechos Humanos indica que para el 2019 la población LGBTI que fue encuestada manifestó que el derecho que percibe como más vulnerado es el de un trato digno y no ser discriminación (51%). 
 
-El escenario desfavorable en torno al respecto a la orientación sexual e identidad de género de las personas LGBTQ+ y los ínfimos avances que se tienen en materia de reconocimiento de derechos humanos perpetúan acciones y comportamientos de discriminación y/o violencia en espacios públicos y educativos. Esto podría estar limitando la participaicón en la esfera pública de las personas LGBTI si consideramos que del total de encuestados que manifestó experimentar alguna muestra de discrimininación y/o violencia, el mayor porcentaje (64.7%) se ubicó en el bloque no expresar librevemente su orientación sexual o identidad de género precisando que no participa de ninguna acción. 
+El escenario desfavorable en torno al respecto a la orientación sexual e identidad de género de las personas LGBTQ+ y los ínfimos avances que se tienen en materia de reconocimiento de derechos humanos perpetúan acciones y comportamientos de discriminación y/o violencia en espacios públicos y educativos. Esto podría estar limitando la participación en la esfera pública de las personas LGBTI si consideramos que del total de encuestados que manifestó experimentar alguna muestra de discrimininación y/o violencia, el mayor porcentaje (64.7%) se ubicó en el bloque no expresar libremente su orientación sexual o identidad de género precisando que no participa de ninguna acción. 
 
-Los resultados obtenidos permiten afirmar que para comprender la participación ciudadana de las personas LGBTQ+, en los términos que este proyecto propone, se requiere del desarrollo y aplicación de mecanismos permanentes e idóneos que generen información estadística confiable y actualizada sobre la situación de los derechos humanos de este grupo poblacional, en realación a ámbitos como educación, salud, integridad, comportamiento electoral y otros.
+Los resultados obtenidos permiten afirmar que para comprender la participación ciudadana de las personas LGBTQ+, en los términos que este proyecto propone, se requiere del desarrollo y aplicación de mecanismos permanentes e idóneos que generen información estadística confiable y actualizada sobre la situación de los derechos humanos de este grupo poblacional, en relación a ámbitos como educación, salud, integridad, comportamiento electoral y otros.
 
 
 Al respecto, resulta importante indicar que para el ciudadano, el Estado representa una organización, una posibilidad, una acción y un responsable respecto a la provisión de diferentes bienes y servicios que deberían cubrir necesidades insatisfechas que atienden expectativas de calidad de vida (Ausejo, 2008). Sin embargo, en momentos donde se cuestiona el accionar de las autoridades y la legitimidad de las instituciones, por la carencia de atención o insuficientes mecanismos que hagan visibles las diferencias, tenderíamos a pensar que es resposabilidad del ciudadano comprender y participar de procesos que inciden en la calidad de vida de la colectividad. 
 
-Pero ¿qué ocurre si los espacios públicos en donde debería ser factible manifestar las demandas representan escenarios de inseguridad, discriminación y violencia?. Asimismo, ¿cómo esperamos que las personas LGBTI desarrollen y ejerza una participación ciudadana no condicionada si los espacios educativos violentan y estigmatizan aquello que está fuera del esquema heteronormativo? 
+Pero ¿qué ocurre si los espacios públicos en donde debería ser factible manifestar las demandas representan escenarios de inseguridad, discriminación y violencia?. Asimismo, ¿cómo esperamos que las personas LGBTI desarrollen y ejerzan una participación ciudadana no condicionada si los espacios educativos violentan y estigmatizan aquello que está fuera del esquema heteronormativo? 
 
-Finalmente, esta aproximación permite identificar limitaciones y abrir otras preguntas de investigación que son necesarias para pensar la configuración de la participación ciudadana en las personas LGBTQ+. 
+Finalmente, esta aproximación permite identificar limitaciones y abrir otras preguntas de investigación que son necesarias para pensar la configuración de la participación ciudadana en las personas LGBTQ+.
 
 
 ## Referencias 
 
 
-Ausejo (2008) De las Políticas Públicas a la gestión pública: una visión sistémica. Pease, G.; Villafranca, L.(Ed) El papel de las políticas públicas (29-36) Recuperado de: https://escuela.pucp.edu.pe/gobierno/images/documentos/publicaciones/reforma2009.pdf
+Ausejo, A. (2008) De las Políticas Públicas a la gestión pública: una visión sistémica. Pease, G.; Villafranca, L.(Ed) El papel de las políticas públicas (29-36) Recuperado de: https://escuela.pucp.edu.pe/gobierno/images/documentos/publicaciones/reforma2009.pdf
 
 Cunill, N. (1997) Repensando lo público a través de la sociedad. Nuevas formas de gestión pública y representación social, Venezuela, Nueva Sociedad. Recuperado de: http://sitp.pichincha.gob.ec/repositorio/diseno_paginas/archivos/Repensando%20lo%20p%C3%BAblico%20a%20trav%C3%A9s%20de%20la%20sociedad.pdf
 
-Dahl, R. (1989) La Poliarquía. Participaicón y oposición, Madrid: Editorial Tecnos (Grupo Anaya, S.A)
+Dahl, R. (1989) La Poliarquía. Participación y oposición, Madrid: Editorial Tecnos (Grupo Anaya, S.A)
 
 Defensoría del Pueblo (2016) Informe Defensorial N° 175 "Derechos humanos de las personas LGBTI: Necesidades de una política pública para la igualdad en el Perú". Recuperado de: https://www.defensoria.gob.pe/wp-content/uploads/2018/05/Informe-175--Derechos-humanos-de-personas-LGBTI.pdf
 
@@ -600,7 +601,7 @@ Fraser, N.(1997) Iustitia Interumpa: Reflexiones críticas desde la posición "p
 
 Held, D. (2008) Modelos de Democracia, Madrid: Alianza Editorial.
 
-Instituto de Estudios Peruanos (2016) La ciudadanía desde la escuela: democracia y ciudadanía. Recuperado de: https://iep.org.pe/wp-content/uploads/2015/12/la_ciudadania_desde_la_escuela__democracia_y_ciudadania-1.pdf
+Jorge,A.; Cruz, M.; Belaúnde, C.; Eguren,M.; Gonzáles N.; Román,A. (2016) La ciudadanía desde la escuela: democracia y ciudadanía. Nova. R (Ed). Instituto de Estudios Peruanos. Recuperado de: https://iep.org.pe/wp-content/uploads/2015/12/la_ciudadania_desde_la_escuela__democracia_y_ciudadania-1.pdf
 
 Instituto Nacional de Estadística e Informática (2018) Primera Encuesta Virtual para Personas LGBTI. Principales Resultados. Recuperado de: https://www.inei.gob.pe/media/MenuRecursivo/boletines/lgbti.pdf
 
@@ -610,7 +611,7 @@ John, R. (2012) Participación ciudadana de la población LGBT en la localidad d
 
 Ministerio de Justicia y Derechos Humanos (2019) II Encuesta Nacional de Derechos Humanos. Informe Completo. Recuperado de: https://cdn.www.gob.pe/uploads/document/file/1611180/3.-Informe-completo-de-la-II-Encuesta-Nacional-de-Derechos-Humanos.pdf.pdf
 
-Restrepo, J. (2005) Estándares Básicos en Competencias Ciudadanas: ¿Cuál concepción ciudadana?: Una aproximación teórica al problema de la formación ciudadana, (tesis de maestría), Bogotá D.C-Colombia, Pontificia Universidad Javeriana, Maestría en Estudios Políticos. 
+Restrepo, J. (2005) Estándares Básicos en Competencias Ciudadanas: ¿Cuál concepción ciudadana?: Una aproximación teórica al problema de la formación ciudadana, (tesis de maestría), Bogotá D.C-Colombia, Pontificia Universidad Javeriana, Maestría en Estudios Políticos. Recuperado de: https://repository.javeriana.edu.co/bitstream/handle/10554/228/pol38.pdf?sequence=5&isAllowed=y
 
 Serrano, J. (2007) "Hacerse sujetos públicos a propósito de la Marcha de la Ciudadanía LGBT en Bogotá", en: Revista Javeriana, año 74, num. 735, oo. 16-25. 
 
